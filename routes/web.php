@@ -5,9 +5,6 @@ Route::get('/', function () {
     return view('welcome', compact('name'));
 });
 
-Auth::routes();
-
-Route::get('/admin', 'AdminController@index');
-
-Route::get('/dashboard' , 'HomeController@index')->name('home');
-Route::get('/apply'     , 'HomeController@apply');
+Route::get('/{vue_capture?}', function () {
+    return view('welcome');
+})->where('vue_capture', '[\/\w\.-]*');
