@@ -11,8 +11,8 @@ class AdminController extends Controller
     public function index()
     {
         $user = Auth::user();
-
-        if(!$user->isAdmin()) {
+        
+        if(!$user || !$user->isAdmin()) {
             return redirect()->home();
         }
 

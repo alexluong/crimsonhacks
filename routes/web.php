@@ -9,4 +9,5 @@ Auth::routes();
 
 Route::get('/admin', 'AdminController@index');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/dashboard' , 'HomeController@index')->name('home');
+Route::get('/apply'     , 'HomeController@apply');

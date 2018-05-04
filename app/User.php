@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Application;
 
 class User extends Authenticatable
 {
@@ -39,5 +40,10 @@ class User extends Authenticatable
         }
 
         return User::where('role', 'hacker')->get();
+    }
+
+    public function application()
+    {
+        return $this->hasOne(Application::class);
     }
 }

@@ -24,9 +24,12 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
+                    @if (Auth::user())
+                        <ul class="navbar-nav mr-auto">
+                            <li><a href="/dashboard" class="nav-link">Dashboard</a></li>
+                            <li><a href="/apply"     class="nav-link">Apply    </a></li>
+                        </ul>
+                    @endif
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
